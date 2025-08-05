@@ -10,7 +10,14 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
-  ...compat.extends("next/core-web-vitals", "next/typescript"),
+  ...compat.config({
+    extends: ['next/core-web-vitals', 'next/typescript', 'prettier'],
+    plugins: ['prettier'],
+    rules: {
+      'prettier/prettier': 'error',
+      'react/no-espace-entities': 'off', // Next.js does not require React in scope
+    }
+  })
 ];
 
 export default eslintConfig;
