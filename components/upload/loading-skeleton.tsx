@@ -24,7 +24,7 @@ export function LoadingSkeleton() {
               <div
                 className={cn(
                   "h-full bg-linear-to-r from-gray-500 to-rose-600 animate-pulse",
-                  index === 0 ? "w-full" : "w-0"
+                  index === 0 ? "w-full" : "w-0",
                 )}
               />
             </div>

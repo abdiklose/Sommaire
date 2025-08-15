@@ -1,33 +1,36 @@
-export const parseSection = (section: string): {title: string; points: string[] } => {
-    const [title, ...content] = section.split('\n');
+export const parseSection = (
+  section: string,
+): { title: string; points: string[] } => {
+  const [title, ...content] = section.split("\n");
 
-    const cleanTitle = title.startsWith('#') ? title.substring(1).trim(): title.trim();
+  const cleanTitle = title.startsWith("#")
+    ? title.substring(1).trim()
+    : title.trim();
 
-    const points : String[] = [];
+  const points: string[] = [];
 
-    let currentPoint = '';
+  let currentPoint = "";
 
-    content.forEach((line) => {
-        const trimmedLine = line.trim();
-        if(trimmedLine.startsWith(',')) {
-            if(currentPoint) points.push(currentPoint.trim());
-            currentPoint = trimmedLine;
-        } else if(!trimmedLine) {
-            if(currentPoint) points.push(currentPoint.trim());
-            currentPoint = '';
-        }else {
-            currentPoint += ' ' + trimmedLine;
-        }
-    });
+  content.forEach((line) => {
+    const trimmedLine = line.trim();
+    if (trimmedLine.startsWith(",")) {
+      if (currentPoint) points.push(currentPoint.trim());
+      currentPoint = trimmedLine;
+    } else if (!trimmedLine) {
+      if (currentPoint) points.push(currentPoint.trim());
+      currentPoint = "";
+    } else {
+      currentPoint += " " + trimmedLine;
+    }
+  });
 
-    if(currentPoint) points.push(currentPoint.trim());
+  if (currentPoint) points.push(currentPoint.trim());
 
-    return {
-        title: cleanTitle, 
-        points: points.filter((point) => point && !point.startsWith('[Choose]')),
-    };
+  return {
+    title: cleanTitle,
+    points: points.filter((point) => point && !point.startsWith("[Choose]")),
+  };
 };
-
 
 export function parsePoint(point: string) {
   const isNumbered = /^\d+\./.test(point);
@@ -49,7 +52,7 @@ export function parsePoint(point: string) {
 
 export function parseEmojiPoint(content: string) {
   // Nettoie le contenu en supprimant un éventuel tiret ou point au début + espaces
-  const cleanContent = content.replace(/^[•-]\s*/, '').trim();
+  const cleanContent = content.replace(/^[•-]\s*/, "").trim();
 
   // Recherche un motif : un ou plusieurs emojis suivis de texte
   const matches = cleanContent.match(/^(\p{Emoji}+)(.+)$/u);

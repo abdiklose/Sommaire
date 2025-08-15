@@ -26,9 +26,7 @@ export function NavigationControls({
           disabled={currentSection === 0}
           className={cn(
             "rounded-full w-12 h-12 transition-all duration-200 bg-linear-to-br from-rose-500 to-rose-600 backdrop-blur-xs border border-rose-500/10",
-            currentSection === 0
-              ? "opacity-50"
-              : "hover:bg-rose-500/20"
+            currentSection === 0 ? "opacity-50" : "hover:bg-rose-500/20",
           )}
         >
           <ChevronLeft className="h-6 w-6" />
@@ -44,7 +42,7 @@ export function NavigationControls({
                 "w-2 h-2 rounded-full transition-all duration-300",
                 currentSection === index
                   ? "bg-linear-to-r from-rose-500 to-rose-600"
-                  : "bg-rose-500/20 hover:bg-rose-500/30"
+                  : "bg-rose-500/20 hover:bg-rose-500/30",
               )}
             />
           ))}
@@ -60,7 +58,7 @@ export function NavigationControls({
             "rounded-full w-12 h-12 transition-all duration-200 bg-linear-to-br from-rose-500 to-rose-600 backdrop-blur-xs border border-rose-500/10",
             currentSection === totalSections - 1
               ? "opacity-50"
-              : "hover:bg-rose-500/20"
+              : "hover:bg-rose-500/20",
           )}
         >
           <ChevronRight className="h-6 w-6" />

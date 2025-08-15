@@ -11,10 +11,10 @@ const fontSans = FontSans({
   weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
-
 export const metadata: Metadata = {
   title: "Sommaire- AI-Powered PDF Summarization",
-  description: "Save hours of reading time, transform lengthy PDFs into clear, accurate summaries in seconds with our advanced AI technology.",
+  description:
+    "Save hours of reading time, transform lengthy PDFs into clear, accurate summaries in seconds with our advanced AI technology.",
 };
 
 export default function RootLayout({
@@ -24,17 +24,15 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-    <html lang="en">
-      <body
-        className={`${fontSans.variable} font-sans antialiased`}
-      >
-        <div className="relative flex min-h-screen flex-col">
-           <Header />
-           <main className="flex-1">{children}</main>
-        </div>
-        <Toaster position="top-right" richColors/>
-      </body>
-    </html>
+      <html lang="en">
+        <body className={`${fontSans.variable} font-sans antialiased`}>
+          <div className="relative flex min-h-screen flex-col">
+            <Header />
+            <main className="flex-1">{children}</main>
+          </div>
+          <Toaster position="top-right" richColors />
+        </body>
+      </html>
     </ClerkProvider>
   );
 }

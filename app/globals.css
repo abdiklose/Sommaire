@@ -4,8 +4,9 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif,
-  'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-sans:
+    var(--font-sans), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -122,16 +123,16 @@
     @apply text-4xl md:text-6xl xl:text-7xl font-bold;
   }
   h2 {
-     @apply text-xl lg:text-3xl font-medium;
+    @apply text-xl lg:text-3xl font-medium;
   }
   h3 {
-     @apply text-2xl lg:text-4xl font-medium;
+    @apply text-2xl lg:text-4xl font-medium;
   }
   a {
-     @apply hover:cursor-pointer;
+    @apply hover:cursor-pointer;
   }
   button {
-     @apply hover:cursor-pointer bg-rose-600 hover:bg-rose-700;
+    @apply hover:cursor-pointer bg-rose-600 hover:bg-rose-700;
   }
   @keyframes gradient-x {
     0%,
