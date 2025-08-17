@@ -34,14 +34,14 @@ export default function CTASection() {
               className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl"
             >
               {" "}
-              Prêt à économiser des heures de lecture ?{" "}
+              Ready to save hours of reading time?{" "}
             </MotionH2>
             <MotionP
               whileHover={itemVariants}
               className="mx-auto max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400"
             >
-              Transformez de longs documents en informations claires et
-              exploitables grâce à notre outil de synthèse basé sur l&apos;IA.
+              Turn long documents into clear, actionable insights with our
+              AI-powered summarization tool.
             </MotionP>
           </div>
           <div className="flex flex-col gap-2 min-[400px]:flex-row justify-center">
