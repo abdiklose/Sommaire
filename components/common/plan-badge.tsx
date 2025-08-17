@@ -1,9 +1,9 @@
-import { getPriceIdForActiveUser } from "@/lib/user";
-import { pricingPlans } from "@/utils/constants";
-import { currentUser } from "@clerk/nextjs/server";
-import { Badge } from "../ui/badge";
-import { cn } from "@/lib/utils";
-import { Crown } from "lucide-react";
+import { getPriceIdForActiveUser } from '@/lib/user';
+import { pricingPlans } from '@/utils/constants';
+import { currentUser } from '@clerk/nextjs/server';
+import { Badge } from '../ui/badge';
+import { cn } from '@/lib/utils';
+import { Crown } from 'lucide-react';
 
 export default async function PlanBadge() {
   const user = await currentUser();
@@ -18,7 +18,7 @@ export default async function PlanBadge() {
     priceId = await getPriceIdForActiveUser(email);
   }
 
-  let planName = "Buy a plan";
+  let planName = 'Buy a plan';
 
   const plan = pricingPlans.find((plan) => plan.priceId === priceId);
 
@@ -29,14 +29,14 @@ export default async function PlanBadge() {
     <Badge
       variant="outline"
       className={cn(
-        "ml-2 bg-linear-to-r from-amber-100 to-amber-200 border-amber-300 hidden lg:flex flex-row items-center",
-        !priceId && "from-red-100 to-red-200 border-red-300",
+        'ml-2 bg-linear-to-r from-amber-100 to-amber-200 border-amber-300 hidden lg:flex flex-row items-center',
+        !priceId && 'from-red-100 to-red-200 border-red-300',
       )}
     >
       <Crown
         className={cn(
-          "w-3 h-3 mr-1 text-amber-600",
-          !priceId && "text-red-600",
+          'w-3 h-3 mr-1 text-amber-600',
+          !priceId && 'text-red-600',
         )}
       />
       {planName}

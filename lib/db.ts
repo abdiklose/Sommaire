@@ -1,9 +1,9 @@
-"use server";
-import { neon } from "@neondatabase/serverless";
+'use server';
+import { neon } from '@neondatabase/serverless';
 
 export async function getDbConnection() {
   if (!process.env.DATABASE_URL) {
-    throw new Error("Neon Databse Url is not defined");
+    throw new Error('Neon Databse Url is not defined');
   }
   const sql = neon(process.env.DATABASE_URL);
   return sql;

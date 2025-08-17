@@ -1,6 +1,6 @@
-import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { cn } from '@/lib/utils';
+import { Button } from '@/components/ui/button';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 export function NavigationControls({
   currentSection,
@@ -25,8 +25,8 @@ export function NavigationControls({
           onClick={onPrevious}
           disabled={currentSection === 0}
           className={cn(
-            "rounded-full w-12 h-12 transition-all duration-200 bg-linear-to-br from-rose-500 to-rose-600 backdrop-blur-xs border border-rose-500/10",
-            currentSection === 0 ? "opacity-50" : "hover:bg-rose-500/20",
+            'rounded-full w-12 h-12 transition-all duration-200 bg-linear-to-br from-rose-500 to-rose-600 backdrop-blur-xs border border-rose-500/10',
+            currentSection === 0 ? 'opacity-50' : 'hover:bg-rose-500/20',
           )}
         >
           <ChevronLeft className="h-6 w-6" />
@@ -39,10 +39,10 @@ export function NavigationControls({
               key={index}
               onClick={() => onSectionSelect(index)}
               className={cn(
-                "w-2 h-2 rounded-full transition-all duration-300",
+                'w-2 h-2 rounded-full transition-all duration-300',
                 currentSection === index
-                  ? "bg-linear-to-r from-rose-500 to-rose-600"
-                  : "bg-rose-500/20 hover:bg-rose-500/30",
+                  ? 'bg-linear-to-r from-rose-500 to-rose-600'
+                  : 'bg-rose-500/20 hover:bg-rose-500/30',
               )}
             />
           ))}
@@ -55,10 +55,10 @@ export function NavigationControls({
           onClick={onNext}
           disabled={currentSection === totalSections - 1}
           className={cn(
-            "rounded-full w-12 h-12 transition-all duration-200 bg-linear-to-br from-rose-500 to-rose-600 backdrop-blur-xs border border-rose-500/10",
+            'rounded-full w-12 h-12 transition-all duration-200 bg-linear-to-br from-rose-500 to-rose-600 backdrop-blur-xs border border-rose-500/10',
             currentSection === totalSections - 1
-              ? "opacity-50"
-              : "hover:bg-rose-500/20",
+              ? 'opacity-50'
+              : 'hover:bg-rose-500/20',
           )}
         >
           <ChevronRight className="h-6 w-6" />

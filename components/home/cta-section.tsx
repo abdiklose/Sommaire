@@ -59,7 +59,7 @@ export default function CTASection() {
                   href="/#pricing"
                   className="flex items-center justify-center"
                 >
-                  Commencer{" "}
+                  Get Started{" "}
                   <ArrowRight className="ml-2 h-4 w-4 animate-pulse" />
                 </Link>
               </Button>

@@ -1,6 +1,6 @@
-import BgGradient from "@/components/common/bg-gradient";
-import { Skeleton } from "@/components/ui/skeleton";
-import { LoadingSkeleton } from "@/components/upload/loading-skeleton";
+import BgGradient from '@/components/common/bg-gradient';
+import { Skeleton } from '@/components/ui/skeleton';
+import { LoadingSkeleton } from '@/components/upload/loading-skeleton';
 
 function HeaderSkeleton() {
   return (

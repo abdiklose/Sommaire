@@ -1,11 +1,11 @@
-import BgGradient from "@/components/common/bg-gradient";
+import BgGradient from '@/components/common/bg-gradient';
 import {
   MotionDiv,
   MotionH1,
   MotionP,
-} from "@/components/common/motion-wrapper";
-import { Skeleton } from "@/components/ui/skeleton";
-import { itemVariants } from "@/utils/constants";
+} from '@/components/common/motion-wrapper';
+import { Skeleton } from '@/components/ui/skeleton';
+import { itemVariants } from '@/utils/constants';
 
 function HeaderSkeleton() {
   return (

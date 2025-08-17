@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { cn } from "@/lib/utils";
-import { Loader2 } from "lucide-react";
-import { forwardRef } from "react";
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { cn } from '@/lib/utils';
+import { Loader2 } from 'lucide-react';
+import { forwardRef } from 'react';
 
 interface UploadFormInputProps {
   onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
@@ -24,7 +24,7 @@ export const UploadFormInput = forwardRef<
           name="file"
           accept="application/pdf"
           required
-          className={cn(isLoading && "opacity-50 cursor-not-allowed")}
+          className={cn(isLoading && 'opacity-50 cursor-not-allowed')}
           disabled={isLoading}
         />
         <Button
@@ -37,7 +37,7 @@ export const UploadFormInput = forwardRef<
               Processing ...
             </>
           ) : (
-            "Upload your PDF"
+            'Upload your PDF'
           )}
         </Button>
       </div>
@@ -45,6 +45,6 @@ export const UploadFormInput = forwardRef<
   );
 });
 
-UploadFormInput.displayName = "UploadFormInput";
+UploadFormInput.displayName = 'UploadFormInput';
 
 export default UploadFormInput;

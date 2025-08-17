@@ -1,4 +1,4 @@
-import { PDFLoader } from "@langchain/community/document_loaders/fs/pdf";
+import { PDFLoader } from '@langchain/community/document_loaders/fs/pdf';
 
 export async function fetchAndExtractPdfText(fileUrl: string) {
   const response = await fetch(fileUrl);
@@ -10,5 +10,5 @@ export async function fetchAndExtractPdfText(fileUrl: string) {
 
   const docs = await loader.load();
 
-  return docs.map((doc) => doc.pageContent).join("\n");
+  return docs.map((doc) => doc.pageContent).join('\n');
 }

@@ -1,7 +1,7 @@
-import Link from "next/link";
-import { Button } from "../ui/button";
-import { Calendar, ChevronLeft, Clock, Sparkle } from "lucide-react";
-import { Badge } from "../ui/badge";
+import Link from 'next/link';
+import { Button } from '../ui/button';
+import { Calendar, ChevronLeft, Clock, Sparkle } from 'lucide-react';
+import { Badge } from '../ui/badge';
 
 export function SummaryHeader({
   title,
@@ -25,10 +25,10 @@ export function SummaryHeader({
           </Badge>
           <div className="flex items-center gap-2 text-sm text-muted-foreground ">
             <Calendar className="h-4 w-4 text-rose-400" />
-            {new Date(createdAt).toLocaleDateString("en-US", {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
+            {new Date(createdAt).toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
             })}
           </div>
           <div className="flex items-center gap-2 text-sm text-muted-foreground ">

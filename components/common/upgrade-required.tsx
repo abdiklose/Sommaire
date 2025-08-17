@@ -1,7 +1,7 @@
-import { ArrowRight, Sparkle } from "lucide-react";
-import BgGradient from "./bg-gradient";
-import { Button } from "../ui/button";
-import Link from "next/link";
+import { ArrowRight, Sparkle } from 'lucide-react';
+import BgGradient from './bg-gradient';
+import { Button } from '../ui/button';
+import Link from 'next/link';
 
 export default function UpgradeRequired() {
   return (

@@ -1,3 +1,5 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import {
   containerVariants,
@@ -5,8 +7,8 @@ import {
   pricingPlans,
 } from "@/utils/constants";
 import { ArrowRight, CheckIcon } from "lucide-react";
-import Link from "next/link";
 import { MotionDiv, MotionSection } from "../common/motion-wrapper";
+import Link from "next/link";
 
 type PriceType = {
   id: string;
