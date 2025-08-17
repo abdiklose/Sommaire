@@ -1,5 +1,5 @@
-import BgGradient from '@/components/common/bg-gradient';
-import { SignIn } from '@clerk/nextjs';
+import BgGradient from "@/components/common/bg-gradient";
+import { SignIn } from "@clerk/nextjs";
 
 export default function Page() {
   return (

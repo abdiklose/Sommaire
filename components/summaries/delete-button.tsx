@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { Button } from '@/components/ui/button';
-import { Trash2 } from 'lucide-react';
+import { Button } from "@/components/ui/button";
+import { Trash2 } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -10,10 +10,10 @@ import {
   DialogTitle,
   DialogTrigger,
   DialogFooter,
-} from '@/components/ui/dialog';
-import { useState, useTransition } from 'react';
-import { deleteSummaryAction } from '@/actions/summary-actions';
-import { toast } from 'sonner';
+} from "@/components/ui/dialog";
+import { useState, useTransition } from "react";
+import { deleteSummaryAction } from "@/actions/summary-actions";
+import { toast } from "sonner";
 
 interface DeleteButtonProps {
   summaryId: string;
@@ -27,8 +27,8 @@ export default function DeleteButton({ summaryId }: DeleteButtonProps) {
     startTransition(async () => {
       const result = await deleteSummaryAction({ summaryId });
       if (!result.success) {
-        toast.error('Error', {
-          description: 'Failed to delete summary',
+        toast.error("Error", {
+          description: "Failed to delete summary",
         });
       }
       setOpen(false);
@@ -67,7 +67,7 @@ export default function DeleteButton({ summaryId }: DeleteButtonProps) {
             className="bg-gray-900 hover:bg-gray-600"
             onClick={handleDelete}
           >
-            {isPending ? 'Deleting...' : 'Delete'}
+            {isPending ? "Deleting..." : "Delete"}
           </Button>
         </DialogFooter>
       </DialogContent>

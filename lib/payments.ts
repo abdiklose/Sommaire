@@ -1,5 +1,5 @@
-import Stripe from 'stripe';
-import { getDbConnection } from './db';
+import Stripe from "stripe";
+import { getDbConnection } from "./db";
 
 type SqlQuery = {
   <T = unknown>(
@@ -21,7 +21,7 @@ export async function handleSubscriptionDeleted({
   subscriptionId: string;
   stripe: Stripe;
 }) {
-  console.log('Subscription deleted', subscriptionId);
+  console.log("Subscription deleted", subscriptionId);
 
   try {
     const subscription = await stripe.subscriptions.retrieve(subscriptionId);
@@ -29,12 +29,12 @@ export async function handleSubscriptionDeleted({
 
     await sql`UPDATE users SET status = 'cancelled' WHERE customer_id = ${subscription.customer}`;
 
-    console.log('Subscription cancelled successfully');
+    console.log("Subscription cancelled successfully");
   } catch (error: unknown) {
     if (error instanceof Error) {
-      console.error('Error handling subscription deleted:', error.message);
+      console.error("Error handling subscription deleted:", error.message);
     } else {
-      console.error('Error handling subscription deleted:', error);
+      console.error("Error handling subscription deleted:", error);
     }
     throw error;
   }
@@ -47,13 +47,13 @@ export async function handleCheckoutSessionCompleted({
   session: Stripe.Checkout.Session;
   stripe: Stripe;
 }) {
-  console.log('Checkout session completed', session);
+  console.log("Checkout session completed", session);
 
   const customerId = session.customer as string;
   const customer = await stripe.customers.retrieve(customerId);
   const priceId = session.line_items?.data[0]?.price?.id;
 
-  if ('email' in customer && priceId) {
+  if ("email" in customer && priceId) {
     const { email, name } = customer;
     const sql = await getSql();
 
@@ -63,7 +63,7 @@ export async function handleCheckoutSessionCompleted({
       fullName: name as string,
       customerId,
       priceId: priceId as string,
-      status: 'active',
+      status: "active",
     });
 
     await createPayment({
@@ -101,9 +101,9 @@ async function createOrUpdateUser({
     }
   } catch (error: unknown) {
     if (error instanceof Error) {
-      console.error('Error creating or updating user:', error.message);
+      console.error("Error creating or updating user:", error.message);
     } else {
-      console.error('Error creating or updating user:', error);
+      console.error("Error creating or updating user:", error);
     }
   }
 }
@@ -126,9 +126,9 @@ async function createPayment({
               VALUES (${amount_total}, ${status}, ${id}, ${priceId}, ${userEmail})`;
   } catch (error: unknown) {
     if (error instanceof Error) {
-      console.log('Error creating payment:', error.message);
+      console.log("Error creating payment:", error.message);
     } else {
-      console.log('Error creating payment:', error);
+      console.log("Error creating payment:", error);
     }
   }
 }

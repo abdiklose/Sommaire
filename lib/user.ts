@@ -1,7 +1,7 @@
-import { pricingPlans } from '@/utils/constants';
-import { getDbConnection } from './db';
-import { getUserUploadCount } from './summaries';
-import { User } from '@clerk/nextjs/server';
+import { pricingPlans } from "@/utils/constants";
+import { getDbConnection } from "./db";
+import { getUserUploadCount } from "./summaries";
+import { User } from "@clerk/nextjs/server";
 
 export async function getPriceIdForActiveUser(email: string) {
   const sql = await getDbConnection();
@@ -31,7 +31,7 @@ export async function hasReachedUploadLimit({
   const priceId = await getPriceIdForActiveUser(email);
 
   const isPro =
-    pricingPlans.find((plan) => plan.priceId === priceId)?.id === 'Pro';
+    pricingPlans.find((plan) => plan.priceId === priceId)?.id === "Pro";
 
   const uploadLimit: number = isPro ? 1000 : 10;
 

@@ -1,4 +1,4 @@
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 export default function ProgressBar({
   sections,
@@ -18,12 +18,12 @@ export default function ProgressBar({
             <div
               key={index}
               className={cn(
-                'h-full bg-linear-to-r from-gray-500 to-rose-600 transition-all duration-500',
+                "h-full bg-linear-to-r from-gray-500 to-rose-600 transition-all duration-500",
                 index === currentSection
-                  ? 'w-full'
+                  ? "w-full"
                   : currentSection > index
-                    ? 'w-full opacity-10'
-                    : 'w-0',
+                    ? "w-full opacity-10"
+                    : "w-0",
               )}
             />
           </div>

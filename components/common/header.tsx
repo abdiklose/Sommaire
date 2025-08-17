@@ -1,7 +1,7 @@
-import { FileText } from 'lucide-react';
-import NavLink from './nav-link';
-import { SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
-import PlanBadge from './plan-badge';
+import { FileText } from "lucide-react";
+import NavLink from "./nav-link";
+import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import PlanBadge from "./plan-badge";
 
 export default function Header() {
   return (
@@ -24,7 +24,7 @@ export default function Header() {
 
       <div className="flex lg:justify-end lg:flex-1">
         <SignedIn>
-          {' '}
+          {" "}
           <div className="flex gap-2 items-center ">
             <NavLink href="/Upload">Upload a PDF</NavLink>
             <PlanBadge />

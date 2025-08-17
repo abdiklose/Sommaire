@@ -1,6 +1,6 @@
-import { parseEmojiPoint, parsePoint } from '@/utils/summary-helpers';
-import { MotionDiv } from '../common/motion-wrapper';
-import { containerVariants, itemVariants } from '@/utils/constants';
+import { parseEmojiPoint, parsePoint } from "@/utils/summary-helpers";
+import { MotionDiv } from "../common/motion-wrapper";
+import { containerVariants, itemVariants } from "@/utils/constants";
 
 const EmojiPoint = ({ point }: { point: string }) => {
   const { emoji, text } = parseEmojiPoint(point) ?? {};
@@ -44,7 +44,7 @@ export default function ContentSection({
   return (
     <MotionDiv
       variants={containerVariants}
-      key={points.join('')}
+      key={points.join("")}
       initial="hidden"
       animate="visible"
       exit="exit"
