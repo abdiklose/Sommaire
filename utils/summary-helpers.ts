@@ -1,26 +1,26 @@
 export const parseSection = (
   section: string,
 ): { title: string; points: string[] } => {
-  const [title, ...content] = section.split('\n');
+  const [title, ...content] = section.split("\n");
 
-  const cleanTitle = title.startsWith('#')
+  const cleanTitle = title.startsWith("#")
     ? title.substring(1).trim()
     : title.trim();
 
   const points: string[] = [];
 
-  let currentPoint = '';
+  let currentPoint = "";
 
   content.forEach((line) => {
     const trimmedLine = line.trim();
-    if (trimmedLine.startsWith(',')) {
+    if (trimmedLine.startsWith(",")) {
       if (currentPoint) points.push(currentPoint.trim());
       currentPoint = trimmedLine;
     } else if (!trimmedLine) {
       if (currentPoint) points.push(currentPoint.trim());
-      currentPoint = '';
+      currentPoint = "";
     } else {
-      currentPoint += ' ' + trimmedLine;
+      currentPoint += " " + trimmedLine;
     }
   });
 
@@ -28,7 +28,7 @@ export const parseSection = (
 
   return {
     title: cleanTitle,
-    points: points.filter((point) => point && !point.startsWith('[Choose]')),
+    points: points.filter((point) => point && !point.startsWith("[Choose]")),
   };
 };
 
@@ -52,7 +52,7 @@ export function parsePoint(point: string) {
 
 export function parseEmojiPoint(content: string) {
   // Nettoie le contenu en supprimant un éventuel tiret ou point au début + espaces
-  const cleanContent = content.replace(/^[•-]\s*/, '').trim();
+  const cleanContent = content.replace(/^[•-]\s*/, "").trim();
 
   // Recherche un motif : un ou plusieurs emojis suivis de texte
   const matches = cleanContent.match(/^(\p{Emoji}+)(.+)$/u);

@@ -1,4 +1,4 @@
-import { FlatCompat } from '@eslint/eslintrc';
+import { FlatCompat } from "@eslint/eslintrc";
 
 const compat = new FlatCompat({
   baseDirectory: import.meta.dirname,
@@ -6,11 +6,11 @@ const compat = new FlatCompat({
 
 const eslintConfig = [
   ...compat.config({
-    extends: ['next/core-web-vitals', 'next/typescript', 'prettier'],
-    plugins: ['prettier'],
+    extends: ["next/core-web-vitals", "next/typescript", "prettier"],
+    plugins: ["prettier"],
     rules: {
-      'prettier/prettier': 'error',
-      'react/no-espace-entities': 'off', // Next.js does not require React in scope
+      "prettier/prettier": "error",
+      "react/no-espace-entities": "off", // Next.js does not require React in scope
     },
   }),
 ];
